@@ -38,20 +38,12 @@ NEXUS is designed to support a conversational assistant powered by Google Gemini
 
 The AI layer is non-blocking and optional, ensuring system stability even if AI services are unavailable.
 
-🚀 How to Run Backend Locally
+🚀 Backend is hosted on Render
 
-pip install -r requirements.txt
-python -m uvicorn app.main:app --reload
+https://nexus-n77m.onrender.com
 
-Backend will be available at:
-http://127.0.0.1:8000
+🌐 Frontend is hosted on Netlify
 
-🌐 Running the Frontend (Local)
-
-cd frontend
-python -m http.server 5500
-
-open in browser:
-http://localhost:5500
+https://admirable-arithmetic-46cc7a.netlify.app
 
 The frontend is a static HTML application.
