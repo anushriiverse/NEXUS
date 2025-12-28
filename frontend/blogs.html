@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXUS - Blogs</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "card-dark": "#1e2936",
+                        "card-border": "#233648",
+                        "text-secondary": "#92adc9",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="relative w-full border-b border-solid border-card-border bg-[#111a22]">
+<div class="flex items-center justify-between px-6 py-4 lg:px-10 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4 text-white cursor-pointer">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<h1 class="text-lg font-bold">NEXUS</h1>
+  <nav class="flex gap-6 text-sm font-medium">
+    <a href="index.html" class="text-text-secondary hover:text-white">Home</a>
+    <a href="research.html" class="text-text-secondary hover:text-white">Research</a>
+    <a href="news.html" class="text-text-secondary hover:text-white">News</a>
+    <a href="blogs.html" class="text-white border-b-2 border-primary pb-1">Blogs</a>
+  </nav>
+</div>
+<div class="flex gap-2">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-transparent hover:bg-[#233648] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Sign In</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Subscribe</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Icon -->
+<div class="lg:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</div>
+<!-- Main Container -->
+<div class="layout-container flex h-full grow flex-col max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8">
+<!-- Hero Section -->
+<div class="py-8 lg:py-12">
+<div class="@container">
+<div class="flex flex-col gap-6 lg:gap-12 lg:flex-row items-center">
+<div class="w-full lg:w-3/5 bg-center bg-no-repeat aspect-video bg-cover rounded-xl shadow-lg relative overflow-hidden group" data-alt="Abstract visualization of artificial intelligence networks glowing in blue" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8C1jkau0rPq7xYl9oUIMJ5VCcwojoTRtWBiXIbs7gSUi6V3_KjdR_qgBRxuZlk-QpdX09nzapeEOSrfkruyjDZV8Yv6lLrFcl4Tv2KP0_17Srtsah8bRdOYB7tepvQpyFFjN4sar24CXgevHq8uqWWJ46CqQNis8DU95H3bo7Gvy78JPrxQZugoBKJQPF8-M1IpL67rBNvxm0iOHjVK6tA8Aj4m_OCDL9M0DpBovcuqADfh6sPpDWwepZIqgI8Hi1UCWrZrI2tGM_");'>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+</div>
+<div class="flex flex-col gap-4 lg:gap-6 flex-1">
+<div class="flex items-center gap-2">
+<span class="bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Featured</span>
+<span class="text-text-secondary text-xs font-medium">Oct 24, 2024</span>
+</div>
+<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
+                            The Future of AI in Startups: 2024 Trends
+                        </h1>
+<p class="text-text-secondary text-base lg:text-lg font-normal leading-relaxed">
+                            Explore how artificial intelligence is reshaping the landscape for early-stage companies and what investors are actively looking for in the next unicorn.
+                        </p>
+<div class="flex items-center gap-4 pt-2">
+<img alt="Author avatar" class="w-10 h-10 rounded-full border border-card-border" data-alt="Portrait of the author" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdwiSxKZJkzNUj1kt5wgsGwkNra9NW5UxKjg4yzPql4Or5osv0AhL5hneJVoOa_yca2PBoqZeC0FVeQZ-Ey-VA5_vHYNShaTDl1agfH5OMv1cA0NioTHDc3pomksd8hBexRDEaoHtYREIOObgzRMwIkkKYNcEyk-9fm2fycWFbTyoKaKM3xArGjcyeQL1_CPP3_MbzS3KBgRaD6CySBk9Qe1eV41cpN9Opk3iKDFHmHr-m8IHT4Q32CRZd-kskomCqjawmIm-AqF0S"/>
+<div class="flex flex-col">
+<span class="text-white text-sm font-bold">Sarah Jenkins</span>
+<span class="text-text-secondary text-xs">Senior Editor • 5 min read</span>
+</div>
+</div>
+<div class="pt-4">
+<button class="flex w-fit cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal transition-all hover:translate-y-[-2px]">
+<span class="truncate">Read Article</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Search & Filter Bar -->
+<div class="flex flex-col md:flex-row gap-4 mb-8 sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-card-border/50">
+<!-- Search -->
+<div class="flex-1 max-w-md">
+<label class="flex flex-col h-10 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-card-border bg-[#1e2936] focus-within:border-primary transition-colors">
+<div class="text-text-secondary flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-secondary/70 px-3 text-sm font-normal leading-normal" placeholder="Search topics, articles, or authors..." value=""/>
+</div>
+</label>
+</div>
+<!-- Category Chips -->
+<div class="flex flex-1 gap-2 overflow-x-auto no-scrollbar items-center">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary px-4 hover:bg-primary/90 transition-colors">
+<p class="text-white text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2d445a] px-4 transition-colors">
+<p class="text-text-secondary text-sm font-medium leading-normal">Technology</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2d445a] px-4 transition-colors">
+<p class="text-text-secondary text-sm font-medium leading-normal">Entrepreneurship</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2d445a] px-4 transition-colors">
+<p class="text-text-secondary text-sm font-medium leading-normal">Market Research</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2d445a] px-4 transition-colors">
+<p class="text-text-secondary text-sm font-medium leading-normal">VC Funding</p>
+</button>
+</div>
+<!-- Sort Filter -->
+<div class="hidden md:flex items-center">
+<button class="flex h-9 items-center gap-2 px-3 rounded-lg hover:bg-[#233648] text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">sort</span>
+<span class="text-sm font-medium">Latest</span>
+</button>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-16">
+<!-- Left Column: Blog Posts -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Article Card 1 -->
+<article class="flex flex-col bg-card-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group border border-transparent hover:border-card-border">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover group-hover:scale-105 transition-transform duration-500" data-alt="Laptop displaying data charts on a wooden desk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0n0tzFHZi3o0aGpMmSif-LDKAqp4krfpZzsgZ0E-WxORuRgNw99OksIYK7LZtVr8xqyjI_l7dpBYqb5j4xQdNWCZKLW75NdFV9IkuUZA3cAmw9bDlJFeTuqFqOJWMjjiB8k4d4-7fM0xjPnKD02Xy4nnPLDKhs-_Kgl9bWufqrbz8IKw1jQElYZURTOo42sG638N9KLbN8i1guhhfworaOg7NX8Yn8CSEUTs9-xG4tWpcMdhe0Yg05CosltGRDbNrnsZlI9bE8g-t");'>
+</div>
+<div class="p-5 flex flex-col gap-3 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-primary text-xs font-bold uppercase tracking-wide">SaaS</span>
+<span class="text-text-secondary text-xs">Oct 22</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Scaling Your SaaS Product</h3>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                                Strategies for sustainable growth in a competitive market without compromising on product quality.
+                            </p>
+<div class="mt-auto pt-3 flex items-center gap-3 border-t border-card-border/50">
+<img alt="Jane Doe" class="w-6 h-6 rounded-full" data-alt="Avatar of Jane Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcwsOg2RIKd1aL5oJtQc8RPMDA5W5JAL2cXD0zyHSpTkb7s6YyRSrASaHNrc0aPTA_JvVxasD6sLycX8c3fAt9W7MpsIz4tU53n2nvpbiVjBlU1lHYoz1QjAx22WVvXdJDWKM6YOINGcMHKe4O2X2En9qKD3yZJCuuzGmXG-LzJCvBAn2qqSV4NMjAmimk5QkzgHeJjeWk7hAT2CtA6s8y2NY3MENDiYfHde4OrPBKN6zpOI7OQzJIScrbFH5BYim8-fbS_LW0OLV4"/>
+<span class="text-text-secondary text-xs font-medium">Jane Doe • 5 min read</span>
+</div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="flex flex-col bg-card-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group border border-transparent hover:border-card-border">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover group-hover:scale-105 transition-transform duration-500" data-alt="Wind turbines on a green hill under a blue sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFxq8O1DmjMIqxAb2mIV61O7yEBrIJYma95a0JYnz7y3kFJjoCSz3BkVhA42zrp1rAxZP9E_9MRbYhFhqa150Ts5RWW2xcBOFe3LdVNO8KHzKJF5kMEl2HEiDlCJo_f4QrzV3TGazd08aKtkIYMD3SdOugYX1kAqwK9G-k5qLz5GpSiSWKm-MRIKoH3WhBVCYiTV8mkrNb5LydA-nyIVCxIWg81ZJveqGtshFecBGqnHlaLI0TLwtphU6jmKccpjz8UkDY9JwaRKIr");'>
+</div>
+<div class="p-5 flex flex-col gap-3 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-primary text-xs font-bold uppercase tracking-wide">Clean Tech</span>
+<span class="text-text-secondary text-xs">Oct 20</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Green Tech Revolution</h3>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                                How renewable energy startups are changing the game and attracting major VC funding this quarter.
+                            </p>
+<div class="mt-auto pt-3 flex items-center gap-3 border-t border-card-border/50">
+<img alt="John Smith" class="w-6 h-6 rounded-full" data-alt="Avatar of John Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpYVsc1wqlURcMrOSQGhRGG7KMFNVRI1JJHq_x7uDMW7VggbvMKfbvoZvbhyrteuH5YWt2FAqnp_-JT7ailH7evVAuCWC7oaLLbnIf2mpMA1NtlaCGdBqunRLdfb2XXTZ_nS6etnp-Oh9HtpjDC1Fv8FSLdQy0gdcIaz1PRPX8uj-mtJRSXM4BsnTbKsBPtooJsP7UdpABqGnkum89NOCTcvWNQSHHwEazP4xJ3xA5EfwGCr1R-4oay0tMIgwSUDZvOO5pZD-mqKAh"/>
+<span class="text-text-secondary text-xs font-medium">John Smith • 4 min read</span>
+</div>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="flex flex-col bg-card-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group border border-transparent hover:border-card-border">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover group-hover:scale-105 transition-transform duration-500" data-alt="Person working on a laptop in a cozy home office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4U_qSHb3oRK5CKufgk_hQc24DAX6EAIXfRK2nhbDqxf6ZDHHC1AUGNvfARNUbZf95JovLd70QxEaeMldZrAGuoxHVf9pcLXF-4jiklpJnGEPRB-tKPJPeZPxd2kfpc7y6P6nmapXu49cA4p3kKY3HAEMZwglEjtTB8kNhITzrPrzTaUHbkRUkHtl7qVQ9qgpeT6550V85SjVTpeYR4WGNOz1HvhDLz717G4HlTF0H-B9GkU1zM6Q0BufnH6YouFBa4cr13lYT16cG");'>
+</div>
+<div class="p-5 flex flex-col gap-3 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-primary text-xs font-bold uppercase tracking-wide">Culture</span>
+<span class="text-text-secondary text-xs">Oct 18</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Remote Work Culture</h3>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                                Building effective teams across different time zones requires a shift in management philosophy.
+                            </p>
+<div class="mt-auto pt-3 flex items-center gap-3 border-t border-card-border/50">
+<img alt="Alice Chen" class="w-6 h-6 rounded-full" data-alt="Avatar of Alice Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfw5E0p96j0tVarH5Qz9SM9b33cBECvdKG7qZ8cO9AgB7ZdW9h3XCuu4a2vam-uZmlBuCDbR9Hti5Mu3S82GYa3oQd81EroRatz7vXsyCF8cSpHMN4OzJm_B9j87eCg9Nzw0DPyNQE1PSVDqRT5vHJ1sqekCh5idQIxR4VvELpzeSEmZQAYnyYmHE-7XZ3OacDvolV4hJP07IATLdoZOW686ExKmkmj4Ux1MVm-fOtJyNFwIkYXqN4RDAelyNdkxJt1VCnp46BkM0m"/>
+<span class="text-text-secondary text-xs font-medium">Alice Chen • 6 min read</span>
+</div>
+</div>
+</article>
+<!-- Article Card 4 -->
+<article class="flex flex-col bg-card-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group border border-transparent hover:border-card-border">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover group-hover:scale-105 transition-transform duration-500" data-alt="Digital lock icon representing cybersecurity" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl1r1-vK61PqlqLtu0EC4xCX-SBxH0wHyPX2yB25PJFIroG8IMKhbimbe-oyFiX9ff4R1crLrKaOS8zOQWniwzl4DyqGR2_xfA7gv-5tTHYjQWiGdZX3UXHqTuFBuFD2tLqtqFWoxHmCtctUJad001UjKyj6euJzLZAdTMc1oVk1dLr2MP56naAUNcCOW7UWQM8MIoTGjgD2RpMgDPrakS-OF3DdNfuoLlJKTNrZ4FmWle-52MwUXwUUshm718yvMPLLVD65IO6I9q");'>
+</div>
+<div class="p-5 flex flex-col gap-3 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-primary text-xs font-bold uppercase tracking-wide">Security</span>
+<span class="text-text-secondary text-xs">Oct 15</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Cybersecurity Essentials</h3>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                                Protecting your startup from modern digital threats is more critical than ever before.
+                            </p>
+<div class="mt-auto pt-3 flex items-center gap-3 border-t border-card-border/50">
+<img alt="Bob Wilson" class="w-6 h-6 rounded-full" data-alt="Avatar of Bob Wilson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPvinbNVnS4X3KAoPKG4Eo2URmA-W9r7vjiCIwrnTzeOS2n6XzFLM4O73JuONt6vRQgtNIWkU3jgkRuY3hSxOSThvdKdcArNd_2S6OKwA1Dad3sn-fEqJ_iWvwddaV0Lo-zSkky0tfTeMrUe2lDhb3zk9M2GNXAKorMnUjbIyuRkL8EohOJv4X1kiPMzFBa1kqqI3XXcJghDLeXFaslsJpZ4NV_Bk0UurEbYbMdn0j-TNSGuHi0ebGdEeHTqLjEDYtqoX7QMc2Du1F"/>
+<span class="text-text-secondary text-xs font-medium">Bob Wilson • 5 min read</span>
+</div>
+</div>
+</article>
+<!-- Article Card 5 -->
+<article class="flex flex-col bg-card-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group border border-transparent hover:border-card-border">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract blockchain network nodes connected" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB40FfY4c9ESUgMVGWj5x5jFjUyCpUSDuKl3CuEN5k9HRksUPZMVTQxMSrBhoHxgSLLBz321Ul458yGzJE_HYpZ9KCe46fO35Zfy0JCu9PzJ4K7bZci7dK9eZPZoiTmGtrlxbcy93h6o8AipnxGyfL3Gw6jR97QjdoMmsZJhtNYNvMepN3KsAZWKBpxV1MRG0JYRez_se_gWmMk0fDkwWIbOBkWV1B1opFvar409Fxvpg5Bj-iE0tGH-6G8Zac4Jeq7I-S1ziw3lsKu");'>
+</div>
+<div class="p-5 flex flex-col gap-3 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-primary text-xs font-bold uppercase tracking-wide">Web3</span>
+<span class="text-text-secondary text-xs">Oct 12</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Blockchain Beyond Crypto</h3>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                                Real-world applications of decentralized ledgers in supply chain and healthcare.
+                            </p>
+<div class="mt-auto pt-3 flex items-center gap-3 border-t border-card-border/50">
+<img alt="Sarah Lee" class="w-6 h-6 rounded-full" data-alt="Avatar of Sarah Lee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmHfsXDzrGOokgTc4wHD2Cve-wf42UF0NRty_nwoH1vjLgCYq_3TBlFSuJvFbUTpz3_UMuB8QDmRIcRAs9L3slQ_gg_pmK-waUrmT_AcFxwKlHqqKIQsghAMA_NwLNY17AnCGOqZv9cUM_tKMIcx3a77gK74PqON7nCa2MB5lx6Ty7W5HY2GO6rarlbpZlJXC_VjW3SygUulVblmrF4tV6zrFNcVAbwmKBBsticnHjHL2PSglIZAbjtUTJO8Pttbv0Dw1tsyndOjGJ"/>
+<span class="text-text-secondary text-xs font-medium">Sarah Lee • 7 min read</span>
+</div>
+</div>
+</article>
+<!-- Article Card 6 -->
+<article class="flex flex-col bg-card-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group border border-transparent hover:border-card-border">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover group-hover:scale-105 transition-transform duration-500" data-alt="Busy city street with people walking, symbolizing gig economy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNeibjpjbwGWhlfCVazMC4wtdooRD5qfW0psyh_0HFprIEwy91wqMKH4Yv4tMsaGhS_192Ph57sHszm-Di60Ev55gjxoa5ws-CdEvOQebiNPpZkVseKslSq34yVE1dDyo2eUS_OwUjIUzRRVMRhr2onrUsSypkw-VUjTzl94494228txchO2g7Sz018EZo_65CCvZiKpL62q-kzuTgTlJ6kV9u24m7jtDIrhWgRlSKLFkp39IWSoT4WTgFI9iJaK81vMqUM_nxfCWg");'>
+</div>
+<div class="p-5 flex flex-col gap-3 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-primary text-xs font-bold uppercase tracking-wide">Labor</span>
+<span class="text-text-secondary text-xs">Oct 10</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">The Gig Economy Shift</h3>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                                Understanding the new workforce dynamics and how platforms are adapting to freelancer needs.
+                            </p>
+<div class="mt-auto pt-3 flex items-center gap-3 border-t border-card-border/50">
+<img alt="Mike Brown" class="w-6 h-6 rounded-full" data-alt="Avatar of Mike Brown" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeg-H-vAf0O1-O1HgHb9vmuP13WHpA4u0GGDtTfbu2EDzljSLRUFab-ZQ-ipWOkLADI4ka_cq7Yr7efPKfIsLyRPCzgr0gyJNtw87w6l_LuOwG221kHLeKTTjWD2kyYE1kX6ht20U11uNV5FGM2LEc186v7Xp_mg6jyPutdC8kaj9ZISylqovjNCg0daFBgKcxcqvcrFnvqjFJHUsYKfeL43RqjjpqZZoXOlIkWIH8jDRshe-4NtPTXsZympYKm2ku1niNcVhJxXHc"/>
+<span class="text-text-secondary text-xs font-medium">Mike Brown • 4 min read</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-8">
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg bg-[#233648] hover:bg-[#2d445a] text-white font-bold text-sm transition-colors border border-card-border">
+<span>Load More Articles</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<!-- Subscribe Widget -->
+<div class="bg-card-dark rounded-xl p-6 border border-card-border">
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<h3 class="text-white font-bold text-lg">Newsletter</h3>
+</div>
+<p class="text-text-secondary text-sm mb-4">Get the latest insights on startups and tech trends delivered to your inbox weekly.</p>
+<div class="flex flex-col gap-3">
+<input class="w-full bg-[#111a22] border border-card-border rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-primary transition-colors" placeholder="Your email address" type="email"/>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg text-sm transition-colors">Subscribe</button>
+</div>
+<p class="text-xs text-text-secondary/50 mt-3 text-center">No spam, unsubscribe anytime.</p>
+</div>
+<!-- Top Authors -->
+<div class="bg-card-dark rounded-xl p-6 border border-card-border">
+<h3 class="text-white font-bold text-lg mb-4">Top Authors</h3>
+<div class="flex flex-col gap-4">
+<a class="flex items-center gap-3 group" href="#">
+<div class="relative">
+<img alt="Sarah Jenkins" class="w-10 h-10 rounded-full border-2 border-transparent group-hover:border-primary transition-colors" data-alt="Avatar of Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDin_FpCE1H3_JYFzh1t9bvEJFDxBQMyItNUlpHVTe6NK67GqASg6VqSwofWH-NXVDDuWLGyBweWuHgM4XoCp_x2DWL7hDhng6OUMpWS3gTjRU1u3TKWg0CYuqvUrQjqlib4xwj8i5uJf66Fg0VxbqWVRP0h4RfQ80WtQBw1c0ieW0TdCxJZpaLdv-rcGCUQrqWXN6BZJLZxD7vobk7ja5IXBBFg9AYemvtH9V6iCSYAq8bNkvHepjzZe0JZQLRqtmvxKwvNF9NM-1T"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-card-dark rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm group-hover:text-primary transition-colors">Sarah Jenkins</span>
+<span class="text-text-secondary text-xs">Senior Editor • 24 Articles</span>
+</div>
+</a>
+<a class="flex items-center gap-3 group" href="#">
+<img alt="David Miller" class="w-10 h-10 rounded-full border-2 border-transparent group-hover:border-primary transition-colors" data-alt="Avatar of David Miller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALEkRzhgo9Qn3Hw5rnwEvx78VIyCoKhUiGDLQK6k5ImY0rdS-EZEBfATeV-8n8nxwOhN2CQjklb8jVQFQSyplEtyEyMZNuUiTSH3zLE8ND8Oek1d0YJ6k9gaFjFFbOFQzlQHnP_CdWefkCzbZTOqR9x9sB140QVw9aZFx74tj452nDS7Vc044mCxOiQkyDZIj6Up06NSDtKyX6j59kuOhN2j6dI1G2ciZC9fRtB8_S71ogDbAw59YsUtqJg4p1CC6PTUmwZ47mRgLh"/>
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm group-hover:text-primary transition-colors">David Miller</span>
+<span class="text-text-secondary text-xs">Tech Analyst • 18 Articles</span>
+</div>
+</a>
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Emily Zhang" class="w-10 h-10 rounded-full border-2 border-transparent group-hover:border-primary transition-colors" data-alt="Avatar of Emily Zhang" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC95LbqLtw2e8_0bBagq1_JsZi-zMfieZiVxom2h0N1EcEO6UUSuJWFWubeSaLWkdoTCDQEzFlVNpZ9vpedb8pMOcHwJE4SO6A5x8TVkT-OcT591BNcJS3lnHeQDmez_rMekUNGFu7yKeBtBSuFZH5-iytIjuTLH4u0jGsC8QjQjFrE2FxcCs93P6AVbYn4_UkWPs80zHhgrkToumZTIPGXkFEAD9r-icnHPtcwLapSGUsxNHPix7u3loJbM7cXvuPaj9wcm-d_M7c7"/>
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm group-hover:text-primary transition-colors">Emily Zhang</span>
+<span class="text-text-secondary text-xs">Venture Capitalist • 12 Articles</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Trending Tags -->
+<div class="bg-card-dark rounded-xl p-6 border border-card-border">
+<h3 class="text-white font-bold text-lg mb-4">Trending Now</h3>
+<div class="flex flex-wrap gap-2">
+<a class="px-3 py-1.5 bg-[#111a22] hover:bg-[#233648] border border-card-border rounded-full text-xs font-medium text-text-secondary hover:text-white transition-colors" href="#">#ArtificialIntelligence</a>
+<a class="px-3 py-1.5 bg-[#111a22] hover:bg-[#233648] border border-card-border rounded-full text-xs font-medium text-text-secondary hover:text-white transition-colors" href="#">#SaaS</a>
+<a class="px-3 py-1.5 bg-[#111a22] hover:bg-[#233648] border border-card-border rounded-full text-xs font-medium text-text-secondary hover:text-white transition-colors" href="#">#Funding</a>
+<a class="px-3 py-1.5 bg-[#111a22] hover:bg-[#233648] border border-card-border rounded-full text-xs font-medium text-text-secondary hover:text-white transition-colors" href="#">#SiliconValley</a>
+<a class="px-3 py-1.5 bg-[#111a22] hover:bg-[#233648] border border-card-border rounded-full text-xs font-medium text-text-secondary hover:text-white transition-colors" href="#">#RemoteWork</a>
+</div>
+</div>
+<!-- Editor's Pick Small List -->
+<div class="bg-card-dark rounded-xl p-6 border border-card-border">
+<h3 class="text-white font-bold text-lg mb-4">Editor's Picks</h3>
+<div class="flex flex-col gap-4">
+<a class="group" href="#">
+<h4 class="text-sm font-bold text-white group-hover:text-primary leading-snug transition-colors mb-1">Why 2024 is the Year of Cleantech</h4>
+<span class="text-xs text-text-secondary">4 min read • Yesterday</span>
+</a>
+<div class="h-px bg-card-border w-full"></div>
+<a class="group" href="#">
+<h4 class="text-sm font-bold text-white group-hover:text-primary leading-snug transition-colors mb-1">Top 10 Cities for Tech Startups</h4>
+<span class="text-xs text-text-secondary">6 min read • 2 days ago</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

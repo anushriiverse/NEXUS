@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexus Hub - Simplified</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#137fec", accent: "#8b5cf6", "background-dark": "#101922", "surface-dark": "#0f0f11", "surface-highlight": "#18181b", text: {main: "#ffffff", muted: "#a1a1aa"}, "background-light": "#f6f7f8"}, fontFamily: {display: "Inter", body: ["Work Sans", "sans-serif"]}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .glass-panel {
+            @apply bg-background-dark/80 backdrop-blur-md border-b border-white/5;
+        }
+    }
+</style>
+</head>
+<body class="bg-background-dark text-text-main font-display antialiased selection:bg-primary/30 selection:text-white">
+<header class="sticky top-0 z-50 glass-panel">
+<div class="max-w-[1400px] mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 cursor-pointer">
+<div class="relative size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-white">NEXUS</h2>
+</div>
+
+  <nav class="flex gap-6 text-sm font-medium">
+    <a href="index.html" class="text-white border-b-2 border-primary pb-1">Home</a>
+    <a href="research.html" class="text-text-secondary hover:text-white">Research</a>
+    <a href="news.html" class="text-text-secondary hover:text-white">News</a>
+    <a href="blogs.html" class="text-text-secondary hover:text-white">Blogs</a>
+  </nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-highlight rounded-lg px-3 py-1.5 border border-white/5 focus-within:border-primary/50 transition-all w-64">
+<span class="material-symbols-outlined text-text-muted text-[18px]">search</span>
+<input class="bg-transparent border-none outline-none text-sm ml-2 w-full text-white placeholder:text-text-muted/50" placeholder="Search..." type="text"/>
+</div>
+<div class="h-6 w-px bg-white/10 mx-1"></div>
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-8 rounded-full bg-cover bg-center ring-2 ring-white/5 cursor-pointer hover:ring-white/20 transition-all" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDb2s35qZxNTA1xnWw_ZfjbVvJRKN2vDmzzeHYEFtrhB48e4bAxPbUfz8aoHApwnZIVtyOW8II4ZgMapcvW50Qk8e9q8kmJsXr0A_lBE8cBRjMIM82vaPkGwBDPCtDbcQ5o-gpouDEOdtPjFNA62T5wSCUB3MNd7DSvIk45-i3zJSzFCZLmuGJl4PWwb5fe4hw8-9cOvcRKM4WXlpfJ6bvun7Y0e-W2uxpDGGHm21CUTNyEq4GBOL_HIHdB4yQkNJ6RgAPWKuWqFQK6");'></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1400px] mx-auto w-full px-4 md:px-6 py-8 flex flex-col gap-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 group relative overflow-hidden rounded-2xl border border-white/5 bg-surface-dark min-h-[500px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkAFV0UIUUfcnleZI05-V85DPvEvw7Zpv8VIFn3w26CBwGxYpyQUh1O6x8SZWxTFSsBEhIOnmY_lIs9gIK-gglsJ_6s_rfSwW49yXZtU2-r-Gyg8J5akZdk6SuxD2eJewovRULstpMw8jBgVreMdiAst9oIwYni_yqV6oH-osQlylX6n4aalXgIPj73sHWHr5O_yhGSsBRMU2CGEZXB7bTj9PkOKlJ3xmvD3zjs0t4LM8tariC8yewO_A4ObcjL9aUdMPDc14PuJEN");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent"></div>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider">Featured</span>
+</div>
+<div class="absolute bottom-0 left-0 p-6 md:p-10 w-full z-10">
+<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                    The Future of AI Diagnosis
+                </h1>
+<p class="text-gray-300 text-base md:text-lg line-clamp-2 mb-6 max-w-2xl font-light">
+                    An in-depth look at how artificial intelligence is diagnosing diseases earlier than ever before.
+                </p>
+<div class="flex items-center gap-3">
+<button class="bg-white text-black hover:bg-gray-200 px-6 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+                        Read Story
+                    </button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-white/10 text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="flex-1 rounded-2xl bg-surface-dark border border-white/5 p-5">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-sm font-bold text-text-muted uppercase tracking-wider">Latest News</h2>
+<a class="text-xs font-medium text-primary hover:text-primary/80" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="flex gap-3 group/item" href="#">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 border border-white/5 group-hover/item:border-white/20 transition-colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxPtmVG6aTBhhKnahzpxsKEc28RhqCksEY7SRbexkblxrS4GsEa5bFPE3O_0NAC4U4PjNLDkBsbYbJiaBxiLtqpKJA_9coeqM5skk12Pwes-DnG-vV2RsHcIQgZl1icM9oPsp_0p7yEvnlMsTiVT66PGqXXHHZmYtOtcPBSZFZfMQKyRVVyaPplKlwdmMbnbDkHfVkZ8PC7PjIu7xtwoSKNNZJXErWcUwT5kbwErOjabYSq9V7_eiIfsGKTBDFBxgOncAbiONrExvQ");'></div>
+<div>
+<span class="text-[10px] font-bold text-primary mb-1 block">Tech</span>
+<h3 class="text-sm font-semibold text-white leading-snug line-clamp-2 group-hover/item:text-primary transition-colors">Tech Giant Acquires Widget Corp in Billion Dollar Deal</h3>
+</div>
+</a>
+<div class="h-px bg-white/5 w-full"></div>
+<a class="flex gap-3 group/item" href="#">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 border border-white/5 group-hover/item:border-white/20 transition-colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAcrWeHgW-CeHKKuzbTujYDqInAFWYUs-kaK_tQbCM8goThhk9m8kxw0r8vfem8pQefJAuzx3BhphUrk3P73q_IRhTn9SnN3forcL3OAYEFVJqH57-Wfy24VLNoLcouEa1tTNfVvb5yf1nO9hLLzfp29MBU5yFdu1DWXSPT_TTC2NEadsKszwBcdCOGv7uPYqdXkRe15Ps3dh3TrdfSyWaJ9Idl1jB8z1ucG7KW3ziaHDDktsuvP54RCpBk5OkSfg00RqO69gjos9o");'></div>
+<div>
+<span class="text-[10px] font-bold text-accent mb-1 block">Finance</span>
+<h3 class="text-sm font-semibold text-white leading-snug line-clamp-2 group-hover/item:text-accent transition-colors">Global Markets Rally as Inflation Data Cools</h3>
+</div>
+</a>
+</div>
+</div>
+<div class="rounded-2xl bg-surface-highlight border border-white/5 p-5 flex flex-col justify-between min-h-[180px]">
+<div class="flex justify-between items-start mb-2">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1">Upcoming Event</span>
+<h3 class="text-lg font-bold text-white">Global Tech Summit</h3>
+</div>
+<div class="bg-white/5 border border-white/5 rounded-md p-2 text-center min-w-[3rem]">
+<span class="block text-[10px] font-bold text-accent uppercase">Nov</span>
+<span class="block text-lg font-bold text-white">12</span>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex items-center gap-4 text-xs text-text-muted mb-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> SF</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 9 AM</span>
+</div>
+<button class="w-full bg-white/5 hover:bg-white/10 text-white border border-white/10 py-2 rounded-lg text-xs font-semibold transition-colors">
+                        Register
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-full rounded-2xl overflow-hidden border border-white/5 bg-surface-dark">
+<div class="flex flex-col md:flex-row p-6 md:p-10 gap-8 items-center">
+<div class="w-full md:w-3/4">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider border border-green-500/20">Research Spotlight</span>
+<span class="text-text-muted text-xs uppercase tracking-wide">Energy Sector</span>
+</div>
+<h2 class="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    Sustainable Energy Storage: A 2024 Meta-Analysis
+                </h2>
+<p class="text-base text-text-muted font-light leading-relaxed mb-6 max-w-3xl">
+                     A comprehensive review of the latest breakthroughs in solid-state battery technology, analyzing over 500 peer-reviewed papers to determine the most viable paths for mass adoption.
+                 </p>
+<div class="flex flex-wrap gap-4 text-xs text-text-muted">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">person</span> Dr. Emily Chen
+                    </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">menu_book</span> 42 Pages
+                    </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">download</span> 1.2k Downloads
+                    </div>
+</div>
+</div>
+<div class="w-full md:w-1/4 flex flex-col gap-3">
+<button class="w-full py-3 bg-white text-black hover:bg-gray-200 rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span> Download PDF
+                 </button>
+<button class="w-full py-3 bg-transparent border border-white/10 text-white hover:bg-white/5 rounded-lg font-bold text-sm transition-colors">
+                    Read Abstract
+                 </button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-dark rounded-2xl border border-white/5 p-6 flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-white">Featured Startups</h3>
+</div>
+<div class="grid gap-4">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all">F</div>
+<div>
+<h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">FinFlow</h4>
+<p class="text-[10px] text-text-muted">FinTech • Series A</p>
+</div>
+</div>
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 font-bold border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all">G</div>
+<div>
+<h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">GreenGrid</h4>
+<p class="text-[10px] text-text-muted">Energy • Seed</p>
+</div>
+</div>
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500 font-bold border border-purple-500/20 group-hover:bg-purple-500 group-hover:text-white transition-all">B</div>
+<div>
+<h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition-colors">BioMed Labs</h4>
+<p class="text-[10px] text-text-muted">HealthTech • Series B</p>
+</div>
+</div>
+</div>
+<a class="mt-auto text-xs font-bold text-text-muted hover:text-white transition-colors" href="#">View All Startups →</a>
+</div>
+<div class="bg-surface-dark rounded-2xl border border-white/5 p-6 flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-white">Popular Reads</h3>
+</div>
+<div class="flex flex-col gap-4">
+<a class="group block" href="#">
+<span class="text-[10px] text-text-muted mb-1 block">5 min read</span>
+<h4 class="text-sm font-medium text-white leading-snug group-hover:text-primary transition-colors">10 Tips for Building a Remote-First Company Culture</h4>
+</a>
+<div class="h-px bg-white/5 w-full"></div>
+<a class="group block" href="#">
+<span class="text-[10px] text-text-muted mb-1 block">8 min read</span>
+<h4 class="text-sm font-medium text-white leading-snug group-hover:text-primary transition-colors">Understanding the New Crypto Regulations in 2024</h4>
+</a>
+<div class="h-px bg-white/5 w-full"></div>
+<a class="group block" href="#">
+<span class="text-[10px] text-text-muted mb-1 block">4 min read</span>
+<h4 class="text-sm font-medium text-white leading-snug group-hover:text-primary transition-colors">Design Trends to Watch: From Brutalism to Bento Grids</h4>
+</a>
+</div>
+</div>
+<div class="bg-surface-highlight rounded-2xl p-6 flex flex-col justify-between text-white border border-white/5">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-[20px] text-primary">mail</span>
+<h3 class="text-lg font-bold">Newsletter</h3>
+</div>
+<p class="text-text-muted text-xs mb-6 leading-relaxed">
+                    Get the latest news and research insights delivered to your inbox daily.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<input class="bg-background-dark border border-white/10 rounded-lg px-3 py-3 text-sm text-white placeholder:text-text-muted/50 w-full focus:border-primary/50 outline-none transition-all" placeholder="Enter your email" type="email"/>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold px-4 py-3 rounded-lg text-sm transition-colors shadow-lg shadow-primary/20">
+                    Subscribe
+                </button>
+</div>
+</div>
+</div>
+</main>
+<button aria-label="Chat with us" class="fixed bottom-12 right-12 z-50 h-16 w-16 rounded-full bg-primary text-white shadow-[0_0_15px_rgba(19,127,236,0.5)] hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(19,127,236,0.7)] transition-all duration-300 flex items-center justify-center group">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">smart_toy</span>
+</button>
+<footer class="mt-12 py-8 text-center border-t border-white/5 bg-background-dark">
+<div class="max-w-[1400px] mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-xs text-text-muted">© 2024 Nexus Hub. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-xs text-text-muted hover:text-white transition-colors" href="#">Privacy</a>
+<a class="text-xs text-text-muted hover:text-white transition-colors" href="#">Terms</a>
+<a class="text-xs text-text-muted hover:text-white transition-colors" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

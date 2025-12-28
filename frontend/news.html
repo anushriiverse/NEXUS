@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>News Feed - NEXUS</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Work Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#192633", // Slightly lighter for cards in dark mode
+                        "surface-light": "#ffffff", // White for cards in light mode
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Work Sans", sans-serif;
+        }
+        /* Custom scrollbar for better aesthetic in dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111a22; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #233648; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #344c63; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-[#233648] bg-white dark:bg-[#111a22] px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+
+<div class="flex items-center gap-4 text-slate-900 dark:text-white cursor-pointer">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined !text-[32px]">hub
+</span>
+</div>
+</div>
+<h1 class="text-lg font-bold">NEXUS</h1>
+<!-- Search Bar -->
+<label class="hidden md:flex flex-col min-w-40 !h-10 w-[400px]">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-slate-200 dark:border-none">
+<div class="text-slate-400 dark:text-[#92adc9] flex bg-slate-50 dark:bg-[#233648] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg rounded-l-none text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 bg-slate-50 dark:bg-[#233648] border-none h-full placeholder:text-slate-400 dark:placeholder:text-[#92adc9] px-4 pl-2 text-base font-normal leading-normal" placeholder="Search news, startups..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="hidden xl:flex items-center gap-6 mr-4">
+ 
+  <nav class="flex gap-6 text-sm font-medium">
+    <a href="index.html" class="text-text-secondary hover:text-white">Home</a>
+    <a href="research.html" class="text-text-secondary hover:text-white">Research</a>
+    <a href="news.html" class="text-white border-b-2 border-primary pb-1">News</a>
+    <a href="blogs.html" class="text-text-secondary hover:text-white">Blogs</a>
+  </nav>
+</div>
+<div class="flex gap-3 items-center">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors shadow-lg shadow-primary/20">
+<span class="truncate">Subscribe</span>
+</button>
+<button class="flex size-9 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-[#233648] dark:hover:bg-[#2f455a] text-slate-600 dark:text-white transition-colors">
+<span class="material-symbols-outlined !text-[20px]">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border-2 border-white dark:border-[#233648] cursor-pointer" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRb75cGDuDyz6VE9MmQ4Zlp_GFvrej2IRkIHA11tA3MQRznEfqyi3ae6-goYRVKggfXjFXDBWYjBD5R5s2L5fgFJbt1ptqKbKF94U3FQ4plGvU18Mw-S9dT2T1WcKa0R_UOZ6m6jZFXIUCKBs2uWcZWtNSanop-GpssdBsyrqQSbM85_v4H1p2EC2Anzx5DXuJl6NJGTNJUe-2BxVYmBpXKFBjHJsnGxCScGU7GlD2zeH1u7dQECXaaP6MpxA_aG3KvTFtCq1EwCE1");'></div>
+</div>
+</div>
+</header>
+<!-- Main Layout -->
+<div class="flex flex-1 w-full max-w-[1600px] mx-auto pt-6 px-4 md:px-6 lg:px-8 gap-6 pb-10">
+<!-- Left Sidebar (Navigation) -->
+<aside class="hidden lg:flex flex-col w-64 shrink-0 sticky top-24 h-[calc(100vh-8rem)]">
+<div class="flex flex-col gap-6 overflow-y-auto pr-2">
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal mb-1">Categories</h1>
+<p class="text-slate-500 dark:text-[#92adc9] text-sm font-normal leading-normal mb-4">Filter content</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-[#233648] dark:text-white group transition-all" href="#">
+<span class="material-symbols-outlined !text-[20px] group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">newspaper</span>
+<span class="text-sm font-semibold leading-normal">All News</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-[#1e2d3d] text-slate-600 dark:text-slate-300 transition-colors group" href="#">
+<span class="material-symbols-outlined !text-[20px] group-hover:scale-110 transition-transform">menu_book</span>
+<span class="text-sm font-medium leading-normal">Research</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-[#1e2d3d] text-slate-600 dark:text-slate-300 transition-colors group" href="#">
+<span class="material-symbols-outlined !text-[20px] group-hover:scale-110 transition-transform">edit_note</span>
+<span class="text-sm font-medium leading-normal">Blogs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-[#1e2d3d] text-slate-600 dark:text-slate-300 transition-colors group" href="#">
+<span class="material-symbols-outlined !text-[20px] group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="text-sm font-medium leading-normal">Events</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-[#1e2d3d] text-slate-600 dark:text-slate-300 transition-colors group" href="#">
+<span class="material-symbols-outlined !text-[20px] group-hover:scale-110 transition-transform">rocket_launch</span>
+<span class="text-sm font-medium leading-normal">Startups</span>
+</a>
+</nav>
+</div>
+<div class="h-px bg-slate-200 dark:bg-[#233648] w-full my-2"></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal mb-3">Saved</h1>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-[#1e2d3d] text-slate-600 dark:text-slate-300 transition-colors group" href="#">
+<span class="material-symbols-outlined !text-[20px] group-hover:scale-110 transition-transform">bookmark</span>
+<span class="text-sm font-medium leading-normal">Reading List</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-[#1e2d3d] text-slate-600 dark:text-slate-300 transition-colors group" href="#">
+<span class="material-symbols-outlined !text-[20px] group-hover:scale-110 transition-transform">history</span>
+<span class="text-sm font-medium leading-normal">History</span>
+</a>
+</nav>
+</div>
+</div>
+</aside>
+<!-- Main Feed Content -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Hero Section -->
+<div class="w-full mb-8 group cursor-pointer">
+<div class="relative w-full h-[480px] rounded-xl overflow-hidden shadow-md">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="SpaceX Rocket Launch with dramatic lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBp7aCCn19t9a4rAMk9zk2fT6BXvJ3gXgYUxen0oxm_BNuGjSiM8CGR4MKxZbgJWO_X-UBz2ySWa429CVTAoR51fUDEEvJwcZdv7mlUr3WcD99C62r3iiOb3PxzdtEm5sezaBP5csFvHAhw5BrgYIcWJ12HQ0psGYaK6P5lRG5ndVI5aSpNPv2yQcB5rPyBnI94O3MYQ3zGP6zvfJtLeVsPvOXWAg1mP93bWKgSJYqfiQ8mbWmrJKnlC8w2ZVS4kua9phSIhMXWDdaN");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 w-full md:w-3/4">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2 py-1 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded">Breaking</span>
+<span class="text-slate-300 text-sm font-medium">Space • 2 hrs ago</span>
+</div>
+<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-3">
+                            SpaceX Launches New Rocket: A Milestone in Orbital Deployment
+                        </h1>
+<p class="text-slate-200 text-base md:text-lg font-normal leading-relaxed line-clamp-2 mb-6">
+                            The latest mission marks a significant milestone in orbital deployment strategies, promising faster satellite internet for remote regions globally.
+                        </p>
+<button class="flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-colors">
+<span>Read Full Story</span>
+<span class="material-symbols-outlined !text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Chips / Filters -->
+<div class="flex items-center gap-3 overflow-x-auto pb-4 mb-4 scrollbar-hide">
+<button class="whitespace-nowrap flex h-9 px-4 items-center justify-center gap-x-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold shadow-sm transition-transform active:scale-95">
+                    Latest
+                </button>
+<button class="whitespace-nowrap flex h-9 px-4 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#233648] hover:bg-slate-50 dark:hover:bg-[#2f455a] border border-slate-200 dark:border-transparent text-slate-700 dark:text-white text-sm font-medium shadow-sm transition-colors">
+                    Trending
+                </button>
+<button class="whitespace-nowrap flex h-9 px-4 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#233648] hover:bg-slate-50 dark:hover:bg-[#2f455a] border border-slate-200 dark:border-transparent text-slate-700 dark:text-white text-sm font-medium shadow-sm transition-colors">
+                    Tech Policy
+                </button>
+<button class="whitespace-nowrap flex h-9 px-4 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#233648] hover:bg-slate-50 dark:hover:bg-[#2f455a] border border-slate-200 dark:border-transparent text-slate-700 dark:text-white text-sm font-medium shadow-sm transition-colors">
+                    IPO Watch
+                </button>
+<button class="whitespace-nowrap flex h-9 px-4 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#233648] hover:bg-slate-50 dark:hover:bg-[#2f455a] border border-slate-200 dark:border-transparent text-slate-700 dark:text-white text-sm font-medium shadow-sm transition-colors">
+                    Crypto
+                </button>
+<button class="whitespace-nowrap flex h-9 px-4 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#233648] hover:bg-slate-50 dark:hover:bg-[#2f455a] border border-slate-200 dark:border-transparent text-slate-700 dark:text-white text-sm font-medium shadow-sm transition-colors">
+                    AI
+                </button>
+</div>
+<!-- Feed Grid -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Article Card 1 -->
+<article class="flex flex-col md:flex-row gap-5 p-5 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-transparent shadow-sm hover:shadow-md hover:border-primary/30 dark:hover:border-primary/50 transition-all group">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Politics</span>
+<span class="text-slate-400 dark:text-slate-500 text-xs">•</span>
+<span class="text-slate-500 dark:text-[#92adc9] text-xs font-medium">4 hrs ago</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight mb-2 group-hover:text-primary transition-colors">AI Regulation Talks Heat Up in Washington</h3>
+<p class="text-slate-600 dark:text-[#92adc9] text-sm leading-relaxed line-clamp-2">
+                                Policy makers gather to discuss the future of artificial intelligence governance, focusing on safety protocols and innovation stifling concerns.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-gray-300 bg-cover" data-alt="Author portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAKkhXLHns5ER4tX7JkRfKNuOX5BqlN5BNrcSJUF1LRpqqL0lJHSuw0C3eV59O9OmBPjfMu_beJOmV42sbM3Nhty3sUqE0de9_oehz51_eimsTyTbbkjUKMwpdXrulqNIgXbkPIj4HwVvsMhiYKnMf8WPtFLYxQYFiSrwj0U34uGHmK2G1e-Nb7EvWTL-h7dOx9sM0o5HeYNjwigwCOUHtNcd3JgBvip89YJEOjNQ3Tj7BWpmuklhPnVd9tJyvtUQoFhH-_gs0tQUq");'></div>
+<span class="text-slate-700 dark:text-slate-300 text-xs font-medium">Sarah Jenkins</span>
+</div>
+<div class="flex gap-2">
+<button class="text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined !text-[20px]">bookmark_border</span></button>
+<button class="text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined !text-[20px]">share</span></button>
+</div>
+</div>
+</div>
+<div class="w-full md:w-48 h-48 md:h-auto shrink-0 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Capitol building with digital overlay" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIdZd2UlndzRUP45RDqr5cjYwNrCBZFIij8sbMeSZepxt4RLkeg93_dQ-x_tO-JrxvGFpzif19u5Ty_-6DQVSv_HTEIjqA2zCqgKzbXTyt8vEsGU9cJRrdqf-vfNwPwJN_rok-BuorfEq7PFbJYOjcrqzhGUEqCcGknG8EAt8JaWXW0wZyCi6I6S5W5V_oy12NKdLtOHc_MdQCEkbLlN-zoZC5pEejZPlVAwck2gAvKwfDybKX1lKYuY5LgnSnY0ewLQHbhVr77ehn");'></div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="flex flex-col md:flex-row gap-5 p-5 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-transparent shadow-sm hover:shadow-md hover:border-primary/30 dark:hover:border-primary/50 transition-all group">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-purple-500 text-xs font-bold uppercase tracking-wider">Startups</span>
+<span class="text-slate-400 dark:text-slate-500 text-xs">•</span>
+<span class="text-slate-500 dark:text-[#92adc9] text-xs font-medium">6 hrs ago</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight mb-2 group-hover:text-primary transition-colors">Top 5 SaaS Startups to Watch in Q3</h3>
+<p class="text-slate-600 dark:text-[#92adc9] text-sm leading-relaxed line-clamp-2">
+                                From productivity tools to enterprise security, these companies are making waves with impressive growth metrics and innovative features.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-gray-300 bg-cover" data-alt="Author portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-w-rNfZNvzfgXajKcbUiMJ8cwcwyL_0AqM8WcPrNa3xJHuTjm4jyw2Wh76tLv4QN9XE0y-rkJyMR6ahSMK5m-8bbX1GvpaVhg2FMu_SAD6ckAxOIpl1mc_dVuPmUQknQGjblFw2L7NB3eoNAKrLMcExIrT6-IRc6OXtGN93QK1uBqwP6Vur3EyXcijWTmPBWokeU3J3nKIprTEj6QtO3r3QaKCRfi2q8o5syLlp01ILl-MYyfTrQclZOZAw66oza9hGcpJHLcjY5z");'></div>
+<span class="text-slate-700 dark:text-slate-300 text-xs font-medium">David Chen</span>
+</div>
+<div class="flex gap-2">
+<button class="text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined !text-[20px]">bookmark_border</span></button>
+<button class="text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined !text-[20px]">share</span></button>
+</div>
+</div>
+</div>
+<div class="w-full md:w-48 h-48 md:h-auto shrink-0 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Office teamwork session with whiteboard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9zkJH4H_-Li3H0p0c5VTCA5Uq-Rektn7XZ5lpZVFwByZ9lMo710EkQMMZQrhF_6rjZhDQsbNtmlaeE80R3ooXMqY7jJrlD-Q8SejO5KP2SHC1DbK_LQls_0El6k1bbHd0Ta_4k6pRTfQh2EjBigLODrmqSFjVu3TwB8E0dfghI3HkmC7e80OMt8dXrbJdj8eRQpeoawrX66lRYSpfGYmbCc6izwdMA3KTdqHyYNhD74gDvyBCoVdawnsMnsbf8FFO_wevUq7VWL8y");'></div>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="flex flex-col md:flex-row gap-5 p-5 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-transparent shadow-sm hover:shadow-md hover:border-primary/30 dark:hover:border-primary/50 transition-all group">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-green-500 text-xs font-bold uppercase tracking-wider">Research</span>
+<span class="text-slate-400 dark:text-slate-500 text-xs">•</span>
+<span class="text-slate-500 dark:text-[#92adc9] text-xs font-medium">1 day ago</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight mb-2 group-hover:text-primary transition-colors">New Research on Quantum Computing Breakthroughs</h3>
+<p class="text-slate-600 dark:text-[#92adc9] text-sm leading-relaxed line-clamp-2">
+                                Researchers at MIT have demonstrated a new method for stabilizing qubits at room temperature, potentially accelerating the timeline for commercial quantum computers.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-gray-300 bg-cover" data-alt="Author portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCACsKdc8T_z080T5g2HfQTrXFhyEDzFOCoEJ3uKyT018TxUQHZ7n4xUoKcYj7_OXmSGGkZmFXNIPtoxh_qpIuQZEjI59LYwK7Iq2KhquyQTGc9NRh9rS5_7chsPahZbpDWDC7yoOP7nYmJEsZkq4mSjIOGoudXj54CtTn7DqwAJeQMNXAo-FbIxwUsEqDVoFDf_GDQm7kvKtvr-AFJDw7kEYoeNJh1EUsfqvVb34gNt7BgU1p2xjG-nWGpaPwV3OTaOxJGFa2rffId");'></div>
+<span class="text-slate-700 dark:text-slate-300 text-xs font-medium">Dr. Emily Rostova</span>
+</div>
+<div class="flex gap-2">
+<button class="text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined !text-[20px]">bookmark_border</span></button>
+<button class="text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined !text-[20px]">share</span></button>
+</div>
+</div>
+</div>
+<div class="w-full md:w-48 h-48 md:h-auto shrink-0 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Quantum computer chip detail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB02ILUmrPv_CW-BdWXUsNi_SWBR30jkcp8Flg7Qpdr7aC6Kx4nvrPTBF1fzuNJeNHg5bsSb7a3G98_9aTRmNKfOIEYTsclncp8zxT6cENIiZD6_eSxmeN9hchzUm-_aSsBdQZTpFKrdSy6OBg5yQEDWOkkqPfucDC2PnmgPqvsB8I5EzXJX30LgOZLr7Utha2IUJ7n7gsn4rEFgpNj9HQ-vuLcj6ee5SrDkIFEDL1QfxZxb-84pM38_SZKghD0IjE0xv93ETbqpWaK");'></div>
+</div>
+</article>
+<!-- Infinite Scroll Loader -->
+<div class="flex justify-center py-6">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-[#233648] text-primary text-sm font-bold shadow hover:bg-slate-50 dark:hover:bg-[#2f455a] transition-colors">
+<span class="material-symbols-outlined animate-spin !text-[20px]">refresh</span>
+                        Load More Stories
+                    </button>
+</div>
+</div>
+</main>
+<!-- Right Rail -->
+<aside class="hidden xl:flex flex-col w-80 shrink-0 gap-6 sticky top-24 h-[calc(100vh-8rem)] overflow-y-auto">
+<!-- Trending Topics Widget -->
+<div class="flex flex-col gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-transparent">
+<div class="flex items-center justify-between">
+<h2 class="text-slate-900 dark:text-white text-base font-bold">Trending Topics</h2>
+<span class="material-symbols-outlined text-primary !text-[20px]">trending_up</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3 border-b border-slate-100 dark:border-slate-800 pb-3 last:border-0 last:pb-0">
+<div class="text-slate-400 dark:text-slate-600 font-bold text-lg">01</div>
+<div>
+<h4 class="text-slate-800 dark:text-slate-200 text-sm font-semibold hover:text-primary cursor-pointer">NVIDIA GTC 2024</h4>
+<span class="text-xs text-slate-500 dark:text-slate-400">12k reads</span>
+</div>
+</div>
+<div class="flex items-start gap-3 border-b border-slate-100 dark:border-slate-800 pb-3 last:border-0 last:pb-0">
+<div class="text-slate-400 dark:text-slate-600 font-bold text-lg">02</div>
+<div>
+<h4 class="text-slate-800 dark:text-slate-200 text-sm font-semibold hover:text-primary cursor-pointer">Bitcoin Halving</h4>
+<span class="text-xs text-slate-500 dark:text-slate-400">8.5k reads</span>
+</div>
+</div>
+<div class="flex items-start gap-3 border-b border-slate-100 dark:border-slate-800 pb-3 last:border-0 last:pb-0">
+<div class="text-slate-400 dark:text-slate-600 font-bold text-lg">03</div>
+<div>
+<h4 class="text-slate-800 dark:text-slate-200 text-sm font-semibold hover:text-primary cursor-pointer">Generative Video AI</h4>
+<span class="text-xs text-slate-500 dark:text-slate-400">6k reads</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming Events Widget -->
+<div class="flex flex-col gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-transparent">
+<div class="flex items-center justify-between">
+<h2 class="text-slate-900 dark:text-white text-base font-bold">Upcoming Events</h2>
+<span class="material-symbols-outlined text-primary !text-[20px]">calendar_month</span>
+</div>
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="flex flex-col items-center justify-center size-12 rounded-lg bg-slate-100 dark:bg-[#111a22] text-center border border-slate-200 dark:border-slate-700">
+<span class="text-[10px] uppercase font-bold text-primary">Oct</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white leading-none">12</span>
+</div>
+<div>
+<h4 class="text-slate-800 dark:text-slate-200 text-sm font-semibold group-hover:text-primary transition-colors">TechCrunch Disrupt</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">San Francisco, CA</p>
+</div>
+</div>
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="flex flex-col items-center justify-center size-12 rounded-lg bg-slate-100 dark:bg-[#111a22] text-center border border-slate-200 dark:border-slate-700">
+<span class="text-[10px] uppercase font-bold text-primary">Nov</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white leading-none">05</span>
+</div>
+<div>
+<h4 class="text-slate-800 dark:text-slate-200 text-sm font-semibold group-hover:text-primary transition-colors">Web Summit 2024</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Lisbon, Portugal</p>
+</div>
+</div>
+<button class="w-full py-2 text-center text-primary text-sm font-bold hover:bg-primary/10 rounded-lg transition-colors mt-1">
+                    View All Events
+                </button>
+</div>
+<!-- Ad Placeholder / Promo -->
+<div class="relative w-full h-40 rounded-xl overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract blue tech pattern background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAS6BlW3wNVaQt4JeiKtDcFCvWjFWXCOF7z647BYCWHpvuhGQ9tICr1PU9OGIk5Wsj8OmVww1hBFqGcCmSVq_MAO4bmMcia5BlcPyOBh29kGljkfoqF-p1uBRhkAxLuHIK73go8h92W5UFxF9lELB5fx8OX1yqrV_hZZeuoP24pEKuSdk9WRUQrLDWFjxdRXFw2DKC10WBQFgTVAsKUg2TECZRb4KNWzXvvCA4mmvkAC99BUFFx1H3NP8AdFgS7JATlAx-twjNNhYIZ");'></div>
+<div class="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
+<div class="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
+<p class="text-white text-xs font-bold uppercase tracking-wider mb-1">Premium Access</p>
+<h3 class="text-white font-bold text-lg leading-tight mb-2">Get Industry Reports</h3>
+<span class="text-white/80 text-xs underline group-hover:text-white transition-colors">Learn More</span>
+</div>
+</div>
+</aside>
+</div>
+</body></html>

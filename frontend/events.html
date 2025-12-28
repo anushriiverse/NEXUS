@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events Calendar - TechNews</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a22",
+                        "surface-dark": "#233648",
+                        "text-muted": "#92adc9",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111a22; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #233648; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334b63; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233648] bg-[#111a22] px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">TechNews</h2>
+</div>
+<div class="hidden lg:flex items-center gap-9">
+
+
+  <nav class="flex gap-6 text-sm font-medium">
+    <a href="index.html" class="text-text-secondary hover:text-white">Home</a>
+    <a href="research.html" class="text-text-secondary hover:text-white">Research</a>
+    <a href="news.html" class="text-text-secondary hover:text-white">News</a>
+    <a href="blogs.html" class="text-text-secondary hover:text-white">Blogs</a>
+  </nav>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#92adc9] flex border-none bg-[#233648] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#233648] focus:border-none h-full placeholder:text-[#92adc9] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Sign In</span>
+</button>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<div class="layout-container flex h-full grow flex-col">
+<div class="w-full flex justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] px-4 md:px-8 flex-1">
+<!-- Hero Section -->
+<div class="@container mb-8">
+<div class="">
+<div class="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end px-6 pb-10 md:px-10 relative overflow-hidden group" data-alt="Futuristic abstract dark blue and purple gradient background representing technology and AI innovation" style='background-image: linear-gradient(to top, rgba(17, 26, 34, 1) 0%, rgba(17, 26, 34, 0.6) 50%, rgba(17, 26, 34, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCt-Ab8GOi3-TibGF4u8jO37WsQfILcw3kE2H525a_FxCVtjEIBpnyiFGV_QGzbnVbwbQnjjYjm4G10yhFejSfAi6zFJNMyKxDkumN3f-o8kd19ON4z3K2tn0He_hwaiEUDRY0TiJEqCDSq3DAs96pCUKInj96-9yK-5LPj5Rmb-H7GIV7xI_jhcKUoHScksD47G1r7lg0Ayw1wcnJ-wTTDCyjxWjSLMmW6faDCDcRAZHP3NvtpEQ68RIhd-foA1Btj3C3nt7e39UYC");'>
+<div class="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide backdrop-blur-sm">
+                                Featured Event
+                            </div>
+<div class="flex flex-col gap-2 text-left z-10 max-w-2xl">
+<h1 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] drop-shadow-lg">
+                                    TechCrunch Disrupt 2024: The Future of AI
+                                </h1>
+<h2 class="text-gray-200 text-base md:text-lg font-normal leading-relaxed mb-4 drop-shadow-md">
+                                    Join the world's leading startups and investors for 3 days of innovation, networking, and groundbreaking announcements in San Francisco.
+                                </h2>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 transition-all text-white text-base font-bold shadow-lg hover:shadow-primary/50">
+                                        Register Early Bird
+                                    </button>
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 transition-all text-white text-base font-medium">
+                                        View Details
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar (Filters & Calendar) -->
+<aside class="w-full lg:w-72 shrink-0 flex flex-col gap-6">
+<!-- Mini Calendar Widget -->
+<div class="bg-surface-dark rounded-xl p-5 border border-[#233648]">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-white font-bold">October 2024</h3>
+<div class="flex gap-1">
+<button class="text-text-muted hover:text-white p-1"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="text-text-muted hover:text-white p-1"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 text-center gap-y-2 text-sm">
+<div class="text-text-muted text-xs font-medium">Su</div>
+<div class="text-text-muted text-xs font-medium">Mo</div>
+<div class="text-text-muted text-xs font-medium">Tu</div>
+<div class="text-text-muted text-xs font-medium">We</div>
+<div class="text-text-muted text-xs font-medium">Th</div>
+<div class="text-text-muted text-xs font-medium">Fr</div>
+<div class="text-text-muted text-xs font-medium">Sa</div>
+<!-- Calendar Dates -->
+<div class="text-gray-600">29</div>
+<div class="text-gray-600">30</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">1</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">2</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">3</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">4</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">5</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">6</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">7</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">8</div>
+<div class="bg-primary text-white rounded font-bold shadow-md shadow-primary/30">9</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">10</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">11</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">12</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">13</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">14</div>
+<div class="relative text-white hover:bg-primary/20 rounded cursor-pointer">
+                                    15
+                                    <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></span>
+</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">16</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">17</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">18</div>
+<div class="text-white hover:bg-primary/20 rounded cursor-pointer">19</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-col gap-6">
+<!-- Filter Group: Type -->
+<div>
+<h4 class="text-white font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">category</span>
+                                    Event Type
+                                </h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">Conferences</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">Webinars</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">Meetups</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">Workshops</span>
+</label>
+</div>
+</div>
+<hr class="border-[#233648]"/>
+<!-- Filter Group: Industry -->
+<div>
+<h4 class="text-white font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">domain</span>
+                                    Industry
+                                </h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">Fintech</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">Healthcare</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">SaaS / B2B</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded bg-surface-dark border-[#3f5266] text-primary focus:ring-offset-background-dark focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-text-muted group-hover:text-white transition-colors text-sm">AI &amp; Machine Learning</span>
+</label>
+</div>
+</div>
+<hr class="border-[#233648]"/>
+<!-- Filter Group: Location -->
+<div>
+<h4 class="text-white font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                                    Format
+                                </h4>
+<div class="flex bg-surface-dark p-1 rounded-lg">
+<button class="flex-1 py-1.5 px-3 rounded text-sm font-medium bg-primary text-white shadow-sm">All</button>
+<button class="flex-1 py-1.5 px-3 rounded text-sm font-medium text-text-muted hover:text-white hover:bg-white/5">Virtual</button>
+<button class="flex-1 py-1.5 px-3 rounded text-sm font-medium text-text-muted hover:text-white hover:bg-white/5">In-Person</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Feed -->
+<main class="flex-1 flex flex-col gap-6 min-w-0">
+<!-- Header & Search -->
+<div class="flex flex-col gap-4">
+<h1 class="text-white tracking-light text-[32px] font-bold leading-tight text-left">Upcoming Industry Events</h1>
+<!-- Search Bar -->
+<div class="w-full">
+<label class="flex flex-col w-full h-12">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full shadow-lg">
+<div class="text-[#92adc9] flex border-none bg-surface-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-surface-dark focus:border-none h-full placeholder:text-[#92adc9] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search events, webinars, conferences..." value=""/>
+</div>
+</label>
+</div>
+<!-- Chips / Quick Filters -->
+<div class="flex gap-3 flex-wrap items-center">
+<span class="text-text-muted text-sm font-medium mr-1">Filter by:</span>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white px-4 hover:bg-blue-600 transition-colors">
+<p class="text-sm font-medium leading-normal">All Events</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-dark border border-[#233648] px-4 hover:bg-[#2a4055] transition-colors group">
+<p class="text-text-muted group-hover:text-white text-sm font-medium leading-normal">Webinars</p>
+<span class="material-symbols-outlined text-text-muted group-hover:text-white text-[20px]">keyboard_arrow_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-dark border border-[#233648] px-4 hover:bg-[#2a4055] transition-colors group">
+<p class="text-text-muted group-hover:text-white text-sm font-medium leading-normal">Conferences</p>
+<span class="material-symbols-outlined text-text-muted group-hover:text-white text-[20px]">keyboard_arrow_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-dark border border-[#233648] px-4 hover:bg-[#2a4055] transition-colors group">
+<p class="text-text-muted group-hover:text-white text-sm font-medium leading-normal">Meetups</p>
+<span class="material-symbols-outlined text-text-muted group-hover:text-white text-[20px]">keyboard_arrow_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-dark border border-[#233648] px-4 hover:bg-[#2a4055] transition-colors group">
+<p class="text-text-muted group-hover:text-white text-sm font-medium leading-normal">Free</p>
+<span class="material-symbols-outlined text-text-muted group-hover:text-white text-[20px]">keyboard_arrow_down</span>
+</button>
+<div class="ml-auto flex items-center gap-2">
+<button class="p-2 text-white bg-surface-dark rounded-md hover:bg-[#2a4055]">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button class="p-2 text-text-muted hover:text-white hover:bg-[#2a4055] rounded-md">
+<span class="material-symbols-outlined text-[20px]">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Events Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 pb-12">
+<!-- Card 1 -->
+<article class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Conference hall with blurred audience and stage lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlyxslYTeCxZlelObH2bdQIQfZFxZ8vvgYyI37sw6gdmwSkRI1Fhqidqlw_XJ2De6m9LI2FCzXbbFnJimRTsxuiMGc-I_Xc9AQyzzjBjuDkYd-o6frFzCj-iB8KGEN06r7Zaadac3BhT24iljNFIgdJ_IzXUXXINycNi647Q-fCaGEIsPw7bxkiwrK4pAf9Ej2rDbFhjL_NMRIu5coS0BCKSL3TUukLD2SmFUcIaXUSNHo-dbBVg6sYq4GD3rvPkLGr9FReZWhjpkq"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 backdrop-blur-sm px-2 py-1 rounded text-center min-w-[50px] border border-white/10">
+<div class="text-xs text-primary font-bold uppercase">Oct</div>
+<div class="text-lg text-white font-bold leading-none">24</div>
+</div>
+<div class="absolute top-3 right-3">
+<button class="p-2 bg-background-dark/50 hover:bg-primary backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Conference</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1">
+<div class="flex items-center gap-2 text-xs text-text-muted">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>London, UK • In-Person</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-primary transition-colors">
+                                        Global Startup Summit 2024
+                                    </h3>
+<p class="text-text-muted text-sm line-clamp-2">
+                                        Connect with over 500+ founders and investors in the heart of London.
+                                    </p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-[#334b63]">
+<div class="flex -space-x-2">
+<img alt="User" class="w-6 h-6 rounded-full border border-surface-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvPbGhkQiysFTYMedxkV0Nrp1ZzEdsmS2k4kC1DW_-Ow2WfOtZzqhNgHZdqRaSBEKbzJtFuV0-XxbZFxuWEGTYm3G0zbDu_-na7CSRQWU-yUFpD67aFtoBaa11sgqC9KMyfmqOqRlMv9i8AWVkULaezVx1AU6eOXIQClLRiLxnQS5xzrmFbQrsYwr3_eKlw4afNmaO636XaKPTu1dFQuHQnfTbyDBYNFtdGn3F9nWHxSbE3bfsdV3WV1d_5tMjb1gER36F16RaRgnt"/>
+<img alt="User" class="w-6 h-6 rounded-full border border-surface-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkdQwcoof_8CLI0oRLOvfsVUP2bnMMko9lve50KGUHmUAxibk_MiZUDRNB8CU22gPGC49AOlai-t10wL-vlL-kbQJ6BE1RV1OUq1PX1KSvHb5RhWy2x4Yg1MTKMywZ7rc8ZckGnWwprSeOZOHvcwcofo_dN7agOaZV4_FFetKB_iJMwuh4D5lifUrizhMct2TpzwNB3H9x5vbvFkQynpRrJliG2QgRUgyI59UZOC7iVyfjobNPrS2o4Pvql_W3uJEmDrxQOi7qwEb5"/>
+<div class="w-6 h-6 rounded-full border border-surface-dark bg-[#334b63] flex items-center justify-center text-[8px] text-white">+42</div>
+</div>
+<span class="text-white font-bold text-sm">$299</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of person typing on laptop showing code" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEbKpeQHpiU5YjK9T7XgRZc7h_7-RgLntIISv2KZDLD9ROLib9P_A_JUHYnjjFZy_60Q0XbRhCi7IROJdi5mCuoFaeCxYG7lKee3uuLMdcbtRzHGn-_suZwU9yz8Bsv2-YwLNqpcVh40fP2P1w7yZIHOYp31rEUUp4MWOsUjpA1wzjqJHU4sZYJ4wC5m3W8_JHXtNnSAtiKomBJdXiACCyEq8PACCxheibwafvg8oCoKp1af3N5qlyy52VgVLBlmmQmA6h7xz35DUo"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 backdrop-blur-sm px-2 py-1 rounded text-center min-w-[50px] border border-white/10">
+<div class="text-xs text-primary font-bold uppercase">Oct</div>
+<div class="text-lg text-white font-bold leading-none">28</div>
+</div>
+<div class="absolute top-3 right-3">
+<button class="p-2 bg-background-dark/50 hover:bg-primary backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-indigo-600/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Webinar</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1">
+<div class="flex items-center gap-2 text-xs text-text-muted">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+<span>Online • Zoom</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-primary transition-colors">
+                                        Scaling your B2B Sales
+                                    </h3>
+<p class="text-text-muted text-sm line-clamp-2">
+                                        Masterclass on setting up outbound engines for SaaS companies.
+                                    </p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-[#334b63]">
+<div class="flex items-center gap-2">
+<img alt="Logo" class="w-5 h-5 rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxFupVvkDQLdZlzAm0cSNcxskcFgAVpk_ioNqolWdjtc9QR8aTcdu9AcrhS_XplOkcUWC1NeffSQoBw5CfrfuKRTsohJviy9ucwc4j3aMIxAwNtYmZs4U-ZJsYtvQwp8BhT05VEWUIPiC9A1LweSXl3fdH1jz6eLBpWyQ9cOj31g6-O9IJE4Nahgj32hqACWU-qEDpJnWYGLg1xQNimMwkVaKUGKWA4x3T7lWqmcpxdfoqHJaat5iWBmx5Ant5qR_f8GR9Ze_MyWmt"/>
+<span class="text-xs text-text-muted">Salesforce</span>
+</div>
+<span class="text-primary font-bold text-sm">Free</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="People talking at a networking event holding drinks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc9iwj856P12R_3RloWNlnuy6lByPKmWMKtt8HoLXmepswyxAA_TpVfJwfXDsU40H3mSM3XObFeftn2UG_UmfXQqONmtgILs6I3tPS96IlYfLL_NRLqruQ1Y9P0ASolHKtWGVf6hNxTTf6MLKSx4PahonDUhrMMfc9LIB9KoUn3E9-vhTjZzO0LDP5yHhpkV9npgIFHVndaG0fmVhwbDB39HBYdv0jQNwrmkyHrmejQogg2BjkG5w6h-HteZAvRpwQnyJ6XRaPMS_4"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 backdrop-blur-sm px-2 py-1 rounded text-center min-w-[50px] border border-white/10">
+<div class="text-xs text-primary font-bold uppercase">Nov</div>
+<div class="text-lg text-white font-bold leading-none">02</div>
+</div>
+<div class="absolute top-3 right-3">
+<button class="p-2 bg-background-dark/50 hover:bg-primary backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-emerald-600/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Meetup</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1">
+<div class="flex items-center gap-2 text-xs text-text-muted">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>San Francisco, CA</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-primary transition-colors">
+                                        Deep Tech Networking Night
+                                    </h3>
+<p class="text-text-muted text-sm line-clamp-2">
+                                        Casual drinks and networking for founders in AI, Robotics, and Space.
+                                    </p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-[#334b63]">
+<div class="flex -space-x-2">
+<img alt="User" class="w-6 h-6 rounded-full border border-surface-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARvX6DHbrCn7CsM06iEZSez95Gcw3VteqmEZgtXaoZ_WP5KKnoxffnP7QiVBh-3koeNJERBuvMay8oRvrLS09e-YH-_x0_VBGFi1455oGGxaJ6-zLesQriJbwHhPLoKlqksktrGVOJy1--GdXPzUduzAWsXk3jO-pQTnEar9JtxH7pNSLuH70Cs5Cvuw9UWOVWEl5uWtIf4nMcYct5djJ75dcM171tYIVsonnBZWuArjbv_dK8xEZSTKmTdhn6aNhAVE_n5UHzklz3"/>
+<img alt="User" class="w-6 h-6 rounded-full border border-surface-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-8O-4azyIc4NCMkWIrIF52GmoAwP61jX6OgZ8SETgW-6u74V-UmOtudG34DAC_jx5fhcItkyyPIuissp5DxcYu0FVwCue3HWUK3YkcSEEFUeU3ebIWV-Jnr6VCDhwlWUjpOhwF36shSdB2p2tfCrAE-2SYDoKjOyVpk_UWhq1VBdmSqLp_giEJBoATOkyzM-HmrGeaXspBWSDU7EXJ5MiaQLSF69T8P2DhoY6kwzkwjWqehukb8uFIVK23fDSVsHI5-305MFBw9g9"/>
+<div class="w-6 h-6 rounded-full border border-surface-dark bg-[#334b63] flex items-center justify-center text-[8px] text-white">+120</div>
+</div>
+<span class="text-white font-bold text-sm">$15</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional workshop with whiteboard and team collaboration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0I2WqZ8EFMN71ptS4lSX0md0ZC9PG4v1oYf9lrCArJIZE-gfNckUGIQmqj-3ZrPjS2KxccOhrJQzDV5qulXKHR-vO6JRqQFA7FGnGJ8lnEzOtaqJms67CcLfsMHr9MqzNKGGHAIQondsR35lYdfzGsEUGnKalTvKo03-nYS3uq8qtMvgbWbu9vuwFSeTNrDt6s9rgDhQmIwj14xOkSwF5TAaHa6b1WPiJBXueQRP3XlHgYsi5jzjAA666ZMky0wevk0SAAPMClNLb"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 backdrop-blur-sm px-2 py-1 rounded text-center min-w-[50px] border border-white/10">
+<div class="text-xs text-primary font-bold uppercase">Nov</div>
+<div class="text-lg text-white font-bold leading-none">05</div>
+</div>
+<div class="absolute top-3 right-3">
+<button class="p-2 bg-background-dark/50 hover:bg-primary backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-orange-600/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Workshop</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1">
+<div class="flex items-center gap-2 text-xs text-text-muted">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Berlin, DE • In-Person</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-primary transition-colors">
+                                        Product Management 101
+                                    </h3>
+<p class="text-text-muted text-sm line-clamp-2">
+                                        A full day workshop on modern product management frameworks.
+                                    </p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-[#334b63]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-text-muted">schedule</span>
+<span class="text-xs text-text-muted">9:00 AM - 5:00 PM</span>
+</div>
+<span class="text-white font-bold text-sm">$450</span>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Team meeting and brainstorming session around a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_FtCPsrZPTaMxC_eD_SgIIoeaFo7dPkaBW_LiFLDF359wTfnLvGEgqyHx5iLhWGVsC7GQQZxPFqDb9RCbi5gI-L7Iy8iF_A_cAIO2wIRZ5mapl3k2tr3gSbk_EtsmqJoU3cB8D47iDnxOkBxcBq8vlwzGL9R_OuqRI-Pl3wV_C6e2M0h8jmxzgl4SPjT1VJ6utBxn9r1fOk93Co-HditcvvRDlgPtfEg0l_VHI_GRlKyt1gBA9BwUNtaRsdYCV7DF2RLZmoWSVPM4"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 backdrop-blur-sm px-2 py-1 rounded text-center min-w-[50px] border border-white/10">
+<div class="text-xs text-primary font-bold uppercase">Nov</div>
+<div class="text-lg text-white font-bold leading-none">12</div>
+</div>
+<div class="absolute top-3 right-3">
+<button class="p-2 bg-background-dark/50 hover:bg-primary backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-indigo-600/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Webinar</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1">
+<div class="flex items-center gap-2 text-xs text-text-muted">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+<span>Online • Live</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-primary transition-colors">
+                                        The Future of Work: Remote First
+                                    </h3>
+<p class="text-text-muted text-sm line-clamp-2">
+                                        Panel discussion with CEOs of GitLab, Doist, and Automattic.
+                                    </p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-[#334b63]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-text-muted">groups</span>
+<span class="text-xs text-text-muted">5k+ Registered</span>
+</div>
+<span class="text-primary font-bold text-sm">Free</span>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract blue digital network connection background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANSYegGl-kcvUqX8x6p4hiEZ1x8izQKwAFmaZHfAJo1pRMKPRmKHeL2F53Vzi9vNVS3uzLRvFfCY3LcStJqh8yRbuUhIgQjBjDm0XYWYwpYX6aeSO2gAR39G1JHA49lup9LF27tnLT2F3UKOpzbmMllizokn4ZCcwOiEMPadQYlD10K0KEeZpjmqOGN5zwIviaAFFqsWdX45owVzk8PsKfAOd_DOYCE-O8HLHiO4rhUgc2ijWLHJ2wk8gfHwkz2heL0vMTd3BHC1MX"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 backdrop-blur-sm px-2 py-1 rounded text-center min-w-[50px] border border-white/10">
+<div class="text-xs text-primary font-bold uppercase">Nov</div>
+<div class="text-lg text-white font-bold leading-none">15</div>
+</div>
+<div class="absolute top-3 right-3">
+<button class="p-2 bg-background-dark/50 hover:bg-primary backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Summit</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1">
+<div class="flex items-center gap-2 text-xs text-text-muted">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>New York, NY</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-primary transition-colors">
+                                        Crypto &amp; Web3 Summit
+                                    </h3>
+<p class="text-text-muted text-sm line-clamp-2">
+                                        Exploring the next generation of decentralized applications.
+                                    </p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-[#334b63]">
+<div class="flex -space-x-2">
+<img alt="User" class="w-6 h-6 rounded-full border border-surface-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaQx9CNhU8M43xkrJ8B6l0IYHHVTIUtdVhNBIshq789uCrDe_YE7akqx1z-pz8HCZ-RrvCu-Y-ewT5iOlARmsa9f7QWnIXODf_4FveX-gR3wobTq6N9erVHPU_YPxyGNsJ78NCgZRWrrvb-bcRpzuIEALD_sZOlPIAlOorYI9vsaDORwBR-NVwgvYtX_1Wfj38kAdhC_HYrM37H9SKhYQWMUEa6-0cKzLPSGNl2a5rwA2G6qslKCqdvf5Y5LsLneAB4muIqEYKIQPV"/>
+<div class="w-6 h-6 rounded-full border border-surface-dark bg-[#334b63] flex items-center justify-center text-[8px] text-white">+800</div>
+</div>
+<span class="text-white font-bold text-sm">$899</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More -->
+<div class="flex justify-center pb-8">
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg border border-[#233648] text-white hover:bg-surface-dark transition-colors font-medium text-sm">
+                                Show More Events
+                                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
