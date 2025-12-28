@@ -255,7 +255,7 @@
 </div>
 <script>
 async function loadResearch() {
-  const res = await fetch("http://127.0.0.1:8000/research/latest");
+  const res = await fetch("https://nexus-n77m.onrender.com/research/latest");
   const papers = await res.json();
 
   const container = document.getElementById("research-grid");
