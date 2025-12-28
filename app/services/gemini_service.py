@@ -1,6 +1,5 @@
 import os
 import json
-import google.generativeai as genai
 
 
 # --------------------------------------------------
@@ -16,9 +15,12 @@ import google.generativeai as genai
 #   export GEMINI_API_KEY="your_api_key_here"
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_ENABLED = bool(GEMINI_API_KEY)
 
-if not GEMINI_API_KEY:
-    raise RuntimeError("GEMINI_API_KEY environment variable not set")
+if GEMINI_ENABLED:
+    import google.generativeai as genai
+
+genai.configure(api_key=GEMINI_API_KEY)
 
 genai.configure(api_key=GEMINI_API_KEY)
 
@@ -30,6 +32,13 @@ MODEL_NAME = "models/gemini-1.5-flash"
 # --------------------------------------------------
 
 def interpret_intent(message: str) -> dict:
+    if not GEMINI_ENABLED:
+        return {
+            "topics": [],
+            "confidence": 0.0,
+            "explanation": ""
+        }
+
     """
     Uses Gemini to extract research/technical topics from a user idea.
 
