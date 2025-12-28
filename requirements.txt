@@ -3,3 +3,5 @@ uvicorn
 arxiv
 pydantic
 python-dotenv
+google-generativeai
+
